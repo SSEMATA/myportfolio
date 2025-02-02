@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav a");
+  
+      sections.forEach(section => section.classList.remove("hidden-section"));
+  
+      navLinks.forEach(link => {
+        link.addEventListener("click", event => {
+          event.preventDefault();
+  
+          const targetId = link.getAttribute("href").replace("#", "");
+          sections.forEach(section => section.classList.add("hidden-section"));
+          document.getElementById(targetId).classList.remove("hidden-section");
+        });
+      });
+    });
+  
+    function toggleContent(sectionId) {
+      const section = document.getElementById(sectionId);
+      const moreContent = section.querySelector('.more-content');
+      const toggleBtn = section.querySelector('.toggle-btn');
+  
+      if (moreContent.style.display === 'none' || !moreContent.style.display) {
+        moreContent.style.display = 'block';
+        toggleBtn.textContent = 'View Less';
+      } else {
+        moreContent.style.display = 'none';
+        toggleBtn.textContent = 'View More';
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+  </header>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <img src="ssemata2561.jpg" alt="Profile Picture">
+    <h2>Hello, I'm [Your Name]</h2>
+    <p>Backend Developer & Technology Enthusiast</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Passionate about creating efficient and scalable backend systems. Always eager to learn and improve.</p>
+      <div class="more-content" style="display: none;">
+        <h3>Background</h3>
+        <p>I come from a background of software engineering and have always had a strong passion for problem-solving and innovation.</p>
+        <h3>Education</h3>
+        <img src="https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Education Image">
+        <p>Bachelor of Science in Computer Science, [Your University Name]</p>
+      </div>
+      <button class="toggle-btn" onclick="toggleContent('about')">View More</button>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="content">
+      <div class="card">
+        <img src="front.png" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Details about Project 1...</p>
+      </div>
+      <div class="card">
+        <img src="host.png" alt="Hospitality Business">
+        <h3>Project 2</h3>
+        <p>Details about Project 2...</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="more-content" style="display: none;">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="Additional Project 1">
+          <h3>Additional Project 1</h3>
+          <p>More project details...</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="Additional Project 2">
+          <h3>Additional Project 2</h3>
+          <p>More project details...</p>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleContent('projects')">View More</button>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="content">
+      <div class="card">
+        <h3>Company A</h3>
+        <p>Role: Backend Developer (Jan 2021 - Dec 2023)</p>
+      </div>
+      <div class="card">
+        <h3>Company B</h3>
+        <p>Role: Software Engineer Intern (Jun 2020 - Dec 2020)</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="more-content" style="display: none;">
+        <div class="card">
+          <h3>Freelance Project 1</h3>
+          <p>Handled backend development for scalable applications.</p>
+        </div>
+        <div class="card">
+          <h3>Freelance Project 2</h3>
+          <p>Implemented cloud solutions and optimized API performance.</p>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleContent('experience')">View More</button>
+    </div>
+    <a class="download-btn" href="path-to-your-cv.pdf" download>Download My CV</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email me at <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+  </footer>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script scr="script.js"></script>
+</body>
+</html>
