@@ -164,10 +164,27 @@ text-align: center;
     font-family: 'Inter';
     font-display: swap;
   }
-
+/*
   @media (max-width: 600px) {
     .hero {
       padding: 2rem 0.5rem;
     }
+  } */
+   /* Base container styling */
+.container {
+  max-width: 1200px;  /* or whatever width you desire for larger screens */
+  margin: 0 auto;     /* centers the container on larger screens */
+  padding: 0 20px;    /* gives some breathing room */
+  box-sizing: border-box;
+}
+
+/* Mobile-specific adjustments using a media query */
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 10px;  /* adjust padding if necessary */
   }
+}
+
   
