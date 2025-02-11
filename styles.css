@@ -12,6 +12,10 @@
     background-color: #ffffff!important; /* Ensure white background */
     color: #333;
   }
+  p {
+    margin: 10px 0;
+  }
+  
 
   header {
     background-color: #4A90E2;
@@ -74,6 +78,8 @@
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    margin-left: 0;
+    margin-right: 0;
   }
   .learn-more {
     background-color: #4A90E2;
