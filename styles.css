@@ -97,6 +97,7 @@ text-align: center;
     margin-top: 10px;
     font-size: 1rem;
     margin-bottom:10px;
+    word-spacing: 1px;
   }
 
   .card img {
@@ -104,6 +105,10 @@ text-align: center;
     border-radius: 8px;
     margin-bottom: 0.5rem;
     height: 250px;
+  }
+  .color {
+    background-color: rgb(120, 182, 218);
+    color: white;
   }
 .highlight {
   color: red;
@@ -170,6 +175,34 @@ text-align: center;
     font-family: 'Inter';
     font-display: swap;
   }
+  .whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: pop-up 0.3s ease-out;
+  }
+  
+  .whatsapp-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  @keyframes pop-up {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
 /*
   @media (max-width: 600px) {
     .hero {
