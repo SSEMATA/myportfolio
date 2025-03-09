@@ -50,3 +50,45 @@
             .card:hover {
                 transform: translateY(-5px);
             }
+
+
+            .contact {
+                background: white;
+                padding: 40px;
+                max-width: 600px;
+                margin: 50px auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            
+            .contact h2 {
+                color: #333;
+            }
+            
+            .contact-links {
+                margin-top: 20px;
+            }
+            
+            .contact-links a {
+                display: inline-block;
+                margin: 10px;
+                text-decoration: none;
+            }
+            
+            .contact-links img {
+                width: 40px;
+                height: 40px;
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            .contact-links img:hover {
+                transform: scale(1.2);
+            }
+            
+            .email {
+                display: block;
+                font-size: 18px;
+                color: #333;
+                margin-top: 15px;
+                font-weight: bold;
+            }
