@@ -12,6 +12,75 @@
                 background-color: #ffffff !important;
                 color: #333;
             }
+
+            .hero-banner {
+                position: relative;
+                height: 100vh;
+                background: url('SSEMATA.JPG') center/cover no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                object-fit: cover;
+            }
+              .profile {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                left: 10px;
+              }
+              .pic {
+                left: 10px;
+              }
+              
+              .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+                
+              }
+              
+              .hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 600px;
+              }
+              
+              .hero-content h1 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+              }
+              
+              .hero-content p {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+              }
+              
+              .cta-buttons a {
+                padding: 10px 20px;
+                margin: 10px;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+              }
+              
+              .btn-primary {
+                background-color: #007bff; /* Primary color */
+              }
+              
+              .btn-secondary {
+                background-color: #28a745; /* Secondary color */
+              }
+              
+              .btn-primary:hover,
+              .btn-secondary:hover {
+                opacity: 0.8;
+              }
             .hidden-content {
                 display: none;
             }
@@ -67,6 +136,7 @@
             
             .contact-links {
                 margin-top: 20px;
+                text-align: center;
             }
             
             .contact-links a {
@@ -92,3 +162,43 @@
                 margin-top: 15px;
                 font-weight: bold;
             }
+            
+
+            /* =================================================================
+            // Show project cards when "Read More" is clicked
+  document.getElementById('show-projects').addEventListener('click', function() {
+    document.getElementById('welcoming-card').style.display = 'none'; // Hide welcoming card
+    document.getElementById('project-cards').style.display = 'grid'; // Show project cards
+});
+
+// Handle Read More and View Less buttons
+document.querySelectorAll('.read-more').forEach(function(button) {
+    button.addEventListener('click', function() {
+        const card = this.closest('.project-card');
+        card.classList.add('expanded');
+        card.querySelector('.read-more').style.display = 'none';
+        card.querySelector('.view-less').style.display = 'inline-block';
+
+        // Hide all other cards
+        const allCards = document.querySelectorAll('.project-cards');
+        allCards.forEach(c => {
+            if (c !== card) {
+                c.classList.add('hidden');
+            }
+        });
+    });
+});
+
+// Handle View Less button
+document.querySelectorAll('.view-less').forEach(function(button) {
+    button.addEventListener('click', function() {
+        const card = this.closest('.project-card');
+        card.classList.remove('expanded');
+        card.querySelector('.read-more').style.display = 'inline-block';
+        card.querySelector('.view-less').style.display = 'none';
+
+        // Show all other cards again
+        const allCards = document.querySelectorAll('.project-card');
+        allCards.forEach(c => c.classList.remove('hidden'));
+    });
+});
