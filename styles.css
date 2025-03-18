@@ -302,6 +302,16 @@ text-align: center;
     transform: translateY(-5px);
   }
 
+  .social {
+    background-color: #4A90E2;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .project-card .social {
+    text-align: center;
+  }
   .toggle-btn {
     background-color: #4A90E2;
     color: white;
