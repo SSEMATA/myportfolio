@@ -16,7 +16,7 @@
             .hero-banner {
                 position: relative;
                 height: 100vh;
-                background: url('SSEMATA.JPG') center/cover no-repeat;
+                background: url('cover.jpg') center/cover no-repeat;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -119,7 +119,13 @@
             .card:hover {
                 transform: translateY(-5px);
             }
-
+           .cont  {
+              background: url('https://images.pexels.com/photos/158028/bellingrath-gardens-alabama-landscape-scenic-158028.jpeg?auto=compress&cs=tinysrgb&w=600');
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+          }
+          
 
             .contact {
                 background: white;
@@ -128,6 +134,10 @@
                 margin: 50px auto;
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                background: white;
+                background-size: cover; /* Covers the entire viewport */
+                background-position: center; /* Centers the image */
+                background-repeat: no-repeat; /* Prevents repetition */
             }
             
             .contact h2 {
@@ -202,3 +212,7 @@ document.querySelectorAll('.view-less').forEach(function(button) {
         allCards.forEach(c => c.classList.remove('hidden'));
     });
 });
+
+
+
+ linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
