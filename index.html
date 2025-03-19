@@ -21,13 +21,13 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SSEMATA SABIRA PORTFOLIO" />
     <meta name="twitter:description" content="Portfolio showcasing my my projects, experience, Educations, skills and about me, and my background." />
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/176613296?s=96&v=4" />
+    <meta name="twitter:image" content="https://ssemata.github.io/myportfolio/founder.jpg" />
   <title>SSEMATA SABIRA</title>
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://media.licdn.com/dms/image/v2/D4E03AQGEMaSvg9tOqw/profile-displayphoto-shrink_400_400/B4EZR07uXjHMAo-/0/1737128602204?e=1744243200&v=beta&t=fVe0zvQirMAv99t-Bi1GciOZ62O7TVZ7mgNq4BbdgQM">
-<link rel="icon" type="image/png" sizes="16x16" href="https://media.licdn.com/dms/image/v2/D4E03AQGEMaSvg9tOqw/profile-displayphoto-shrink_400_400/B4EZR07uXjHMAo-/0/1737128602204?e=1744243200&v=beta&t=fVe0zvQirMAv99t-Bi1GciOZ62O7TVZ7mgNq4BbdgQM">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ssemata.github.io/myportfolio/founder.jpg">
+
 
   <link rel="stylesheet" href="styles.css">
   <script>
@@ -61,7 +61,37 @@
         toggleBtn.textContent = 'View More';
       }
     }
+//scrow//
+    
+// Get the buttons for scrolling
+const scrollTopButton = document.getElementById('scroll-top');
+const scrollBottomButton = document.getElementById('scroll-bottom');
 
+// Scroll to the top when the "scroll-top" button is clicked
+scrollTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Scroll to the bottom when the "scroll-bottom" button is clicked
+scrollBottomButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+});
+
+// Show/hide scroll-to-top button based on scroll position
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      scrollTopButton.style.display = 'block';  // Show button when scrolled down
+    } else {
+      scrollTopButton.style.display = 'none';   // Hide button at the top
+    }
+  });
+  
     
   </script>
 </head>
