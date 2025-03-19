@@ -212,7 +212,7 @@ img {
     display: none;
 }
 
-/* Responsive Design */
+/* Responsive Design 
 @media (max-width: 768px) {
     .welcoming-card {
         flex-direction: column;
@@ -232,7 +232,16 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+*/
+@media (max-width: 768px) {
+  .project-cards {
+      grid-template-columns: 1fr; /* Full width on small screens */
+  }
 
+  .project-card img {
+      height: auto; /* Adjusts image height for smaller screens */
+  }
+}
   
 
   section {
