@@ -9,9 +9,12 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: lavender!important; /* Ensure white background */
+    background-color: lavender !important; /* Default Light Mode */
     color: #333;
-  }
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
   p {
     margin: 10px 0;
   }
@@ -53,6 +56,8 @@
     font-size: 1rem;
   }
 
+
+  
   .project-container {
     width: 100%;
     max-width: 1200px;
