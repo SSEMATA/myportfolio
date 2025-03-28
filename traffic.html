@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Traffic System</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ssemata.github.io/myportfolio/founder.jpg">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .hero-banner {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("collaborate.jpg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero-banner .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            background: rgba(129, 125, 125, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .projects {
+            padding: 2rem;
+        }
+        .projects h2 {
+            text-align: center;
+        }
+        .project-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .project-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .card-content {
+            padding: 1rem;
+        }
+        .card-content h3 {
+            margin: 0 0 1rem;
+            text-align: center;
+        }
+        .card-content p {
+            margin: 0 0 1rem;
+            text-align: left;
+        }
+        .card-content a {
+            text-decoration: none;
+            color: white;
+            background: #007BFF;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        h2 h3 {
+            text-align: center;
+        }
+        .project-video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+          
+          .video-container {
+            width: 100%;
+            max-width: 600px;
+          }
+          
+          .project-video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+          }
+          
+          .description-container {
+            padding: 20px;
+            max-width: 600px;
+            text-align: left;
+          }
+          
+          .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+          }
+          
+          .description {
+            font-size: 1.2rem;
+            color: #555;
+          }
+          
+          @media (min-width: 768px) {
+            .project-video-section {
+              flex-direction: row;
+              justify-content: space-between;
+            }
+          
+            .description-container {
+              max-width: 45%;
+              padding-left: 30px;
+            }
+          }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="heading-text">Innovating Scalable Tech-Driven Businesses For Growth.</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <section class="hero-banner" id="home">
+        <div class="text">🚗 Sensor-Based Traffic Control | 🚦 Optimized Signal Timing | 🚶‍♂️ Pedestrian Safety | 🚑 Emergency</div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>Progress on the Project</h2>
+        <div class="project-cards">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/9574351/pexels-photo-9574351.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 1">
+                <div class="card-content">
+                    <h3>Phase 1: Research & Planning</h3>
+                    <p>We started by defining our objectives, focusing on optimizing traffic flow, ensuring pedestrian safety, and prioritizing emergency vehicles. To establish a solid foundation, we researched existing traffic management systems and identified their limitations. We studied how ultrasonic sensors, Arduino microcontrollers, buzzers, and LED signals function within an automated system. With this knowledge, we designed a system architecture, outlining sensor placements, traffic light control logic, and power distribution.</p>
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/2344267/pexels-photo-2344267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 2">
+                <div class="card-content">
+                    <h3>Phase 2: System Design & Simulation</h3>
+                    <p>We translated our research into a practical design by developing a circuit diagram that integrated sensors, lights, and controllers. Using simulation tools like Tinkercad and Proteus, we tested our system logic virtually before moving to hardware. We also created a flowchart outlining the decision-making process for dynamic traffic control. This phase helped us identify potential inefficiencies and fine-tune our approach before implementation.</p>
+                   
+                </div>
+            </div>
+            <div class="card">
+                <img src="traffic system.jpg" alt="Project 3">
+                <div class="card-content">
+                    <h3>Phase 3: Hardware Implementation</h3>
+                    <p>We finalized our system by documenting every step, including circuit designs, Arduino code, and test results. We prepared a demonstration of the working prototype, showcasing its efficiency and adaptability. Additionally, we explored potential enhancements, such as IoT integration for remote monitoring. By compiling insights gained throughout development, we shall a roadmap for future improvements and real-world scalability.</p>
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="arduino.jpg" alt="Project 4">
+                <div class="card-content">
+                    <h3>Phase 4: Prototyping & Refinement</h3>
+                    <p>We constructed a scaled-down prototype using materials like wood and cardboard, allowing us to visualize real-world application. During testing, we Optimize sensor placements for better vehicle detection and adjusted signal timing to improve traffic efficiency. Recognizing the importance of emergency response, we shall also refine our system to prioritize emergency vehicles, ensuring they receive green-light clearance when detected. This phase will ensure our system is both functional and adaptable.</p>
+                   
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/29268048/pexels-photo-29268048/free-photo-of-traffic-light-showing-red-signal-against-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 5">
+                <div class="card-content">
+                    <h3>Phase 5: Testing & Debugging</h3>
+                    <p>We shall conduct multiple test runs to evaluate the system’s accuracy and efficiency in various traffic scenarios. By analyzing real-time sensor data, we shall identify and resolved hardware and software inconsistencies. We will  calibrate sensors to minimize false detections and optimized energy consumption for sustainability. Through rigorous testing, we shall refine our traffic control logic, ensuring seamless transitions between signals and smooth traffic flow.</p>
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/18423179/pexels-photo-18423179/free-photo-of-a-traffic-light-with-green-and-red-lights.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 6">
+                <div class="card-content">
+                    <h3>Phase 6: Deployment & Documentation</h3>
+                    <p>We will finalize our system by documenting every step, including circuit designs, Arduino code, and test results. We will prepare a demonstration of the working prototype, showcasing its efficiency and adaptability. Additionally, we will explore potential enhancements, such as IoT integration for remote monitoring. By compiling insights gained throughout development, we will create a roadmap for future improvements and real-world scalability.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-video-section">
+        <div class="video-container">
+            <video src="Arduino Traffic Light Demo.mp4" autoplay loop muted class="project-video"></video>
+        </div>
+        <div class="description-container">
+          <h2 class="section-title">Project Overview</h2>
+          <p class="description">
+            Our Smart Integrated Traffic System uses ultrasonic sensors and Arduino technology to optimize traffic flow, enhance pedestrian safety, and prioritize emergency vehicles. By detecting vehicles in real time, the system automatically adjusts traffic signals, ensuring smoother movement at intersections while also providing buzzer alerts for pedestrian crossings. With an emergency vehicle priority feature, it allows faster response times for ambulances and other critical services. Watch as we demonstrate how smart technology is transforming road safety and urban mobility! 
+          </p>
+        </div>
+      </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

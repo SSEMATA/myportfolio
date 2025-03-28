@@ -48,7 +48,9 @@
     padding: 1rem;
     text-decoration: none;
   }
-
+.more-content {
+    display: none;
+  }
   nav a:hover {
     background-color: goldenrod;
     color: black;
@@ -379,6 +381,7 @@ text-align: center;
   @font-face {
     font-family: 'Inter';
     font-display: swap;
+    src: url('https://fonts.gstatic.com/s/inter/v3/UcCO3Fwr2l8U0k2Sbc0.woff2') format('woff2'); /* Example font file */
   }
   .whatsapp-icon {
     position: fixed;
