@@ -82,10 +82,30 @@
       <a href="#contact">Contact</a>
     </nav>
     </div>
+    <!--<div id="map" style="width: 100%; height: 500px;"></div> -->
 
   </header>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ED4ZP6R5E1"></script>
+  <!--
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<script>
+  function initMap() {
+    var fortPortal = { lat: 0.671, lng: 30.275 }; // Fort Portal coordinates
+
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12, // Adjust zoom level
+      center: fortPortal,
+    });
+
+    var marker = new google.maps.Marker({
+      position: fortPortal,
+      map: map,
+      title: "Fort Portal, Uganda",
+    });
+  }
+</script>
+-->
+ <!-- Google tag (gtag.js) 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ED4ZP6R5E1"></script> -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -169,7 +189,7 @@
         </div>
         <!-- Project Card 3 -->
         <div class="project-card" id="project-card-3">
-            <img src="https://images.pexels.com/photos/442584/pexels-photo-442584.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 3 Image">
+            <img src="traffic system.jpg" alt="Project 3 Image">
             <div class="project-info">
                 <h3>Smart traffic system</h3>
                 <p>Role: Designer</p>
@@ -207,6 +227,16 @@
             </div>
             <a href="https://ssemata.github.io/new-spark/" class="social">Explore More</a>
         </div>
+        <!--Project seven-->
+        <div class="project-card" id="project-card-6">
+          <img src="security.jpg" alt="Project 5 Image">
+          <div class="project-info">
+              <h3>Security alarming system </h3>
+              <p>Developer</p>
+              <p class="project-description">Working as developer on Security system that uses sensors to monitor</p>
+          </div>
+          <a href="https://www.browse-index.com/" class="social">Explore More</a>
+      </div>
     </div>
 </div>
 
