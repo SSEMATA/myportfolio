@@ -73,6 +73,7 @@
     background-color: #2C3E50;
     color: white;
     padding: 1.2rem;
+    margin: 0;
   }
   .heading-text {
     
@@ -152,6 +153,11 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1rem;
+}
+.project-card .heading {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
 }
 .welcoming-card button:hover {
     background-color: #005bb5;

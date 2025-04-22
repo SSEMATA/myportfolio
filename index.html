@@ -113,16 +113,27 @@
 
   gtag('config', 'G-ED4ZP6R5E1');
 </script>
-  <section class="hero-banner">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <h1>Full-Stack Developer | Entrepreneur | IoT Enthusiast</h1>
-        <p>Discover My Projects & Let’s Chat.</p>
-        <div class="cta-buttons">
-            <a href="#projects" class="btn-primary">View My Projects</a>
-            <a href="#contact" class="btn-secondary">Contact Me</a>
-        </div>
+<section class="hero-banner">
+  <div class="slideshow">
+    <div class="slide active" style="background-image: url('collaborate.jpg');">
+      <div class="text-overlay">Collaborating with big minded people</div>
     </div>
+    <div class="slide" style="background-image: url('traffic\ system.jpg');">
+      <div class="text-overlay">Building a functional prototype of integrated traffic road system with sensors</div>
+    </div>
+    <div class="slide" style="background-image: url('map2.jpg');">
+      <div class="text-overlay">Digital Marketing indEx Software LLC Company</div>
+    </div>
+    <div class="slide" style="background-image: url('kyebambe.jpg');">
+      <div class="text-overlay">Working with ASEI-Uganda teaching young students computer fundamentals</div>
+    </div>
+    <div class="slide" style="background-image: url('aq.jpg');">
+      <div class="text-overlay">Digital Marketing Aqualama-UV water treatment program for ASEI-Uganda</div>
+    </div>
+    <div class="slide" style="background-image: url('security.jpg');">
+      <div class="text-overlay">Building integrated security system using sensors to detect thieves.</div>
+    </div>
+  </div>
 </section>
 <div class="progress-container">
   <div class="progress-bar" id="progress-bar"></div>
@@ -164,9 +175,9 @@
         <div class="project-card" id="project-card-1">
             <img src="https://images.pexels.com/photos/14179265/pexels-photo-14179265.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 1 Image">
             <div class="project-info">
-                <h3> Aqualama – UV-C LED Water Treatment</h3>
-                <p>Marketing Specialist</p>
-                <p class="project-description">Marketing consultant</p>
+                <h3 class="heading"> Aqualama – UV-C LED Water Treatment</h3>
+                <p>Marketing consultant</p>
+                <p class="project-description">Promoting Aqualama's UV water treatment program</p>
             </div>
             <a href="https://aqualamaug.com/" class="social">Explore More</a>
         </div>
@@ -174,7 +185,7 @@
         <div class="project-card" id="project-card-2">
             <img src="https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 2 Image">
             <div class="project-info">
-                <h3>Celestial Horizons-Bed and Breakfast</h3>
+                <h3 class="heading">Celestial Horizons-Bed and Breakfast</h3>
                 <p>Co-founder and Partnership manager</p>
                 <p class="project-description">Website listing hotels, bookings, and experiences.</p>
             </div>
@@ -184,7 +195,7 @@
         <div class="project-card" id="project-card-3">
             <img src="traffic system.jpg" alt="Project 3 Image">
             <div class="project-info">
-                <h3>Smart traffic system</h3>
+                <h3 class="heading">Smart traffic system</h3>
                 <p>Role: Designer</p>
                 <p class="project-description">Working with University students on Smart traffic lights with ultrasonic sensors and emergency priority.
                   Optimizes traffic flow and pedestrian safety effectively.</p>
@@ -195,7 +206,7 @@
         <div class="project-card" id="project-card-4">
             <img src="kyebambe.jpg" alt="Project 4 Image">
             <div class="project-info">
-                <h3>STEM</h3>
+                <h3 class="heading">STEM</h3>
                 <p>Mentor</p>
                 <p class="project-description">Mentoring  students coding simple websites using HTML and CSS with Crevans.</p>
             </div>
@@ -205,7 +216,7 @@
         <div class="project-card" id="project-card-5">
             <img src="index.jpg" alt="Project 5 Image">
             <div class="project-info">
-                <h3>indEx</h3>
+                <h3  class="heading">indEx</h3>
                 <p>Marketing Specialist</p>
                 <p class="project-description">Working as marketing specialist of indEx</p>
             </div>
@@ -215,7 +226,7 @@
         <div class="project-card" id="project-card-6">
             <img src="https://ssemata.github.io/images1/founder.jpg" alt="Project 6 Image">
             <div class="project-info">
-                <h3>Spark</h3>
+                <h3 class="heading">Spark</h3>
                 <p>Co-founder and co-developer</p>
                 <p class="project-description">Working on the back-end of spark.</p>
             </div>
@@ -225,7 +236,7 @@
         <div class="project-card" id="project-card-6">
           <img src="security.jpg" alt="Project 5 Image">
           <div class="project-info">
-              <h3>Security alarming system </h3>
+              <h3 class="heading">Security alarming system </h3>
               <p>Developer</p>
               <p class="project-description">Working as developer on Security system that uses sensors to monitor</p>
           </div>
@@ -401,22 +412,7 @@ window.onload = function() {
       }
     });
 
-    function createFlower() {
-      const flower = document.createElement("div");
-      flower.innerHTML = "🌸"; // Flower emoji
-      flower.classList.add("flower");
-      
-      // Randomize position and size
-      flower.style.left = Math.random() * 100 + "vw";
-      flower.style.fontSize = Math.random() * 20 + 20 + "px";
     
-      document.body.appendChild(flower);
-    
-      // Remove flower after animation
-      setTimeout(() => {
-        flower.remove();
-      }, 3000);
-    }
     
     // Detect scrolling to bottom
     window.addEventListener("scroll", function() {
@@ -430,5 +426,19 @@ window.onload = function() {
       }
     });
     
+
+    //hero banner
+    const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showNextSlide() {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}
+
+// Change slide every 4 seconds
+setInterval(showNextSlide, 4000);
+
   </script>
 </html>
