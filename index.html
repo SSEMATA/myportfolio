@@ -65,6 +65,16 @@
     
   </script>
 </head>
+<div id="loader">
+  <img src="sabs.jpg" class="photo-loader">
+  <canvas id="fireCanvas"></canvas>
+</div>
+
+
+
+
+
+<div id="content" style="display: none;">
 <body>
   <header>
     <h1 class="heading-text">Innovating Scalable Tech-Driven Businesses For Growth.</h1>
@@ -113,34 +123,24 @@
 
   gtag('config', 'G-ED4ZP6R5E1');
 </script>
-<section class="hero-banner">
-  <div class="slideshow">
-    <div class="slide active" style="background-image: url('collaborate.jpg');">
-      <div class="text-overlay">Collaborating with big minded people</div>
-    </div>
-    <div class="slide" style="background-image: url('traffic\ system.jpg');">
-      <div class="text-overlay">Building a functional prototype of integrated traffic road system with sensors</div>
-    </div>
-    <div class="slide" style="background-image: url('map2.jpg');">
-      <div class="text-overlay">Digital Marketing indEx Software LLC Company</div>
-    </div>
-    <div class="slide" style="background-image: url('kyebambe.jpg');">
-      <div class="text-overlay">Working with ASEI-Uganda teaching young students computer fundamentals</div>
-    </div>
-    <div class="slide" style="background-image: url('aq.jpg');">
-      <div class="text-overlay">Digital Marketing Aqualama-UV water treatment program for ASEI-Uganda</div>
-    </div>
-    <div class="slide" style="background-image: url('security.jpg');">
-      <div class="text-overlay">Building integrated security system using sensors to detect thieves.</div>
-    </div>
+<div class="banner">
+  <div class="background">
+      <div class="slide">
+          <img src="map2.jpg" class="fade-img">
+          <div class="text">RUNNING DIGITAL MARKET CAMPAIGNS</div>
+      </div>
+      <div class="slide">
+          <img src="tr.webp" class="fade-img">
+          <div class="text">WORKING ON INTEGRATED SMART TRAFFIC SYSTEM CONTAINING SENSORS</div>
+      </div>
+      <div class="slide">
+          <img src="aqualama2.PNG" class="fade-img">
+          <div class="text">RUNNING DIGITAL MARKETING OF AQUALAMA-UV water treatment for ASEI-Ug</div>
+      </div>
   </div>
-</section>
-<div class="progress-container">
-  <div class="progress-bar" id="progress-bar"></div>
 </div>
-<div id="badge-container" class="hidden">
-  🎖️ <span>Explorer Badge Unlocked!</span>
-</div>
+
+
 
   <section id="about">
     <h2>About Me</h2>
@@ -429,16 +429,93 @@ window.onload = function() {
 
     //hero banner
     const slides = document.querySelectorAll('.slide');
-let current = 0;
+let index = 0;
 
-function showNextSlide() {
-  slides[current].classList.remove('active');
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('active');
+function fadeContent() {
+    slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+        slide.querySelector('.text').style.opacity = i === index ? '1' : '0';
+    });
+
+    index = (index + 1) % slides.length;
 }
 
-// Change slide every 4 seconds
-setInterval(showNextSlide, 4000);
+setInterval(fadeContent, 4000); // Change image & text every 4 seconds
+
+
+const canvas = document.getElementById("fireCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+    constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 8 + 3; // Bigger sparks
+        this.speedX = (Math.random() - 0.5) * 10; // Wider spread
+        this.speedY = (Math.random() - 0.5) * 10;
+        this.color = color;
+        this.alpha = 1;
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.alpha -= 0.02;
+    }
+
+    draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+    }
+}
+
+function createFirework(x, y) {
+    const colors = ["#ff5733", "#ffbd33", "#ff3333", "#ff8800"];
+    for (let i = 0; i < 40; i++) { // More sparks for bigger explosion
+        particles.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((particle, index) => {
+        particle.update();
+        particle.draw();
+        if (particle.alpha <= 0) {
+            particles.splice(index, 1);
+        }
+    });
+
+    requestAnimationFrame(animate);
+}
+
+window.addEventListener("load", () => {
+    setInterval(() => {
+        const x = window.innerWidth / 2;
+        const y = window.innerHeight / 2;
+        createFirework(x, y);
+    }, 300); // More frequent explosions
+
+    animate();
+
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }, 5000);
+});
+
+
+
+
+
 
   </script>
 </html>
