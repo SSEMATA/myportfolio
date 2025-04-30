@@ -127,7 +127,7 @@
   <div class="background">
       <div class="slide">
           <img src="map2.jpg" class="fade-img">
-          <div class="text">RUNNING DIGITAL MARKET CAMPAIGNS</div>
+          <div class="text">RUNNING DIGITAL MARKETING CAMPAIGNS</div>
       </div>
       <div class="slide">
           <img src="tr.webp" class="fade-img">
@@ -454,9 +454,9 @@ class Particle {
     constructor(x, y, color) {
         this.x = x;
         this.y = y;
-        this.size = Math.random() * 8 + 3; // Bigger sparks
-        this.speedX = (Math.random() - 0.5) * 10; // Wider spread
-        this.speedY = (Math.random() - 0.5) * 10;
+        this.size = Math.random() * 5 + 2;
+        this.speedX = Math.cos(Math.random() * Math.PI * 2) * (Math.random() * 8 + 2);
+        this.speedY = Math.sin(Math.random() * Math.PI * 2) * (Math.random() * 8 + 2);
         this.color = color;
         this.alpha = 1;
     }
@@ -464,6 +464,7 @@ class Particle {
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
+        this.size += 0.1; // Expands before fading
         this.alpha -= 0.02;
     }
 
@@ -478,8 +479,8 @@ class Particle {
 }
 
 function createFirework(x, y) {
-    const colors = ["#ff5733", "#ffbd33", "#ff3333", "#ff8800"];
-    for (let i = 0; i < 40; i++) { // More sparks for bigger explosion
+    const colors = ["#ff5733", "#ffbd33", "#ff3333", "#ff8800", "#ffff33"];
+    for (let i = 0; i < 50; i++) { // More particles for bigger explosion
         particles.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
     }
 }
@@ -500,9 +501,9 @@ function animate() {
 window.addEventListener("load", () => {
     setInterval(() => {
         const x = window.innerWidth / 2;
-        const y = window.innerHeight / 2;
+        const y = window.innerHeight / 2 - 100; // Firework shoots higher before exploding
         createFirework(x, y);
-    }, 300); // More frequent explosions
+    }, 600); // Slower bursts, more dramatic explosions
 
     animate();
 
