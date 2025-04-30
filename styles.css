@@ -64,6 +64,7 @@
   
   .project-container {
     width: 100%;
+    max-width: 1200px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -78,6 +79,7 @@
     background-color: #fff;
     color: black;
     text-align: left;
+    border-radius: 8px;
     height: 500px;
     position: absolute;
     top: 0;
@@ -118,6 +120,7 @@
     width: 50%;
     height: 100%;
     overflow: hidden;
+    border-radius: 8px;
 }
 .image-slider img {
     width: 100%;
@@ -135,6 +138,7 @@
     padding: 20px;
     background: url('https://images.pexels.com/photos/69776/tulips-bed-colorful-color-69776.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center;
     background-size: cover;
+    border-radius: 8px;
     width: 100%;
 }
 .project-card {
@@ -145,10 +149,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     width: 100%;
-    height: 420px;
-}
-.project-card .read-more {
-  margin-bottom: 5px;
 }
 img {
     max-width: 100%;
@@ -156,10 +156,10 @@ img {
     object-fit: cover;
 }
 .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 100%; /* Makes image responsive */
+  height: 180px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures images scale properly */
+  border-radius: 8px; /* Smooth edges */
 }
 .project-info h3 {
     margin: 15px 0;
