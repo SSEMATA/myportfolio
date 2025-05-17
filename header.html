@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fullscreen Right-to-Left Dropdown Navigation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: white;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown-overlay {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100vw;
+      height: 0;
+      background: linear-gradient(to left, #00395b, #001f3f);
+      overflow: hidden;
+      transition: height 0.5s ease;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 0;
+      z-index: 999;
+    }
+
+    .nav-item:hover .dropdown-overlay {
+      height: 280px;
+      padding: 2rem;
+    }
+
+    .dropdown-content {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      color: white;
+      gap: 4rem;
+      padding-right: 5%;
+      animation: slideLeft 0.5s ease forwards;
+      flex-wrap: wrap;
+    }
+
+    @keyframes slideLeft {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
+
+    .dropdown-section {
+      flex: 0 0 200px;
+      min-width: 180px;
+    }
+
+    .dropdown-section h4 {
+      font-size: 1.4rem;
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .dropdown-section p, .dropdown-section a {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: white;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .social-icons a i {
+      margin-right: 0.5rem;
+      font-size: 1.3rem;
+      color: #00d4ff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #001f3f;
+        padding: 1rem;
+      }
+
+      .dropdown-content {
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 2rem;
+      }
+
+      .social-icons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">Sabira</div>
+    <nav>
+      <ul>
+        <li class="nav-item">
+          <a href="#">Home</a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a href="#">About</a>
+          <div class="dropdown-overlay">
+            <div class="dropdown-content">
+              <div class="dropdown-section">
+                <h4>Background</h4>
+                <p>Coming from innovative and entrepreneur who wants to change the world in positive way.</p>
+              </div>
+              <div class="dropdown-section">
+                <h4>Education</h4>
+                <p>Self taught Software Engineer learned especially from FreeCodeCamp.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Projects -->
+        <li class="nav-item">
+          <a href="#">Projects</a>
+          <div class="dropdown-overlay">
+            <div class="dropdown-content">
+              <div class="dropdown-section">
+                <h4>Aqualama by ASEI</h4>
+                <p>Running Digital marketing campaign.</p>
+              </div>
+              <div class="dropdown-section">
+                <h4>STEM Education</h4>
+                <p>Teaching young students how to code and writing simple web pages.</p>
+              </div>
+              <div class="dropdown-section">
+                <h4>Celestial Horizons</h4>
+                <p>Running partnership and a founder.</p>
+              </div>
+              <div class="dropdown-section">
+                <h4>indEx</h4>
+                <p>Running social Media marketing .</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Experience -->
+        <li class="nav-item">
+          <a href="#">Experience</a>
+          <div class="dropdown-overlay">
+            <div class="dropdown-content">
+              <div class="dropdown-section">
+                <h4>Freelazer</h4>
+                <p>Graphical Designer.</p>
+              </div>
+              <div class="dropdown-section">
+                <h4>H&S Fashion</h4>
+                <p>Marketing President.</p>
+              </div>
+              <div class="dropdown-section">
+                <h4>indEx</h4>
+                <p>Acted as Location Data organizer.</p>
+              </div>
+              <div class="dropdown-section">
+                <h4>Spark</h4>
+                <p>Built the Frontend and Backend of Spark food delivery website.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a href="#">Contact</a>
+          <div class="dropdown-overlay">
+            <div class="dropdown-content">
+              <div class="dropdown-section" style="width: 100%;">
+                <h4>Connect With Me</h4>
+                <div class="social-icons">
+                  <a href="mailto:ssematasabira24@gmail.com"><i class="fas fa-envelope"></i>Email</a>
+                  <a href="https://wa.me/256786023858" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+                  <a href="https://instagram.com/your_username" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+                  <a href="https://linkedin.com/in/your_username" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                  <a href="https://facebook.com/your_username" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+</body>
+</html>

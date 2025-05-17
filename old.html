@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="SSEMATA SABIRA" />
+    <meta property="og:description" content="Portfolio showcasing my my projects, experience, Educations, skills and about me, and my background." />
+    <meta property="og:image" content="https://ssemata.github.io/myportfolio/founder.jpg" />
+    <meta property="og:url" content="https://ssemata.github.io/myportfolio/" />
+    <meta property="og:type" content="website" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="SSEMATA SABIRA PORTFOLIO" />
+    <meta property="og:description" content="Portfolio showcasing my my projects, experience, Educations, skills and about me, and my background." />
+    <meta property="og:image" content="https://ssemata.github.io/myportfolio/founder.jpg" />
+    <meta property="og:url" content="https://ssemata.github.io/myportfolio/" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SSEMATA SABIRA PORTFOLIO" />
+    <meta name="twitter:description" content="Portfolio showcasing my my projects, experience, Educations, skills and about me, and my background." />
+    <meta name="twitter:image" content="https://ssemata.github.io/myportfolio/founder.jpg" />
+  <title>SSEMATA SABIRA</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ssemata.github.io/myportfolio/founder.jpg">
+
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav a");
+  
+      sections.forEach(section => section.classList.remove("hidden-section"));
+  
+      navLinks.forEach(link => {
+        link.addEventListener("click", event => {
+          event.preventDefault();
+  
+          const targetId = link.getAttribute("href").replace("#", "");
+          sections.forEach(section => section.classList.add("hidden-section"));
+          document.getElementById(targetId).classList.remove("hidden-section");
+        });
+      });
+    });
+  
+    function toggleContent(sectionId) {
+      const section = document.getElementById(sectionId);
+      const moreContent = section.querySelector('.more-content');
+      const toggleBtn = section.querySelector('.toggle-btn');
+  
+      if (moreContent.style.display === 'none' || !moreContent.style.display) {
+        moreContent.style.display = 'block';
+        toggleBtn.textContent = 'View Less';
+      } else {
+        moreContent.style.display = 'none';
+        toggleBtn.textContent = 'View More';
+      }
+    }
+
+    
+  </script>
+</head>
+<div id="loader">
+  <img src="sabs.jpg" class="photo-loader">
+  <canvas id="fireCanvas"></canvas>
+</div>
+
+
+
+
+
+<div id="content" style="display: none;">
+<body>
+  <header>
+    <h1 class="heading-text">Innovating Scalable Tech-Driven Businesses For Growth.</h1>
+    <div class="pic">
+      <a href="index.html">
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGEMaSvg9tOqw/profile-displayphoto-shrink_400_400/B4EZR07uXjHMAo-/0/1737128602204?e=1747267200&v=beta&t=786mryenbX4Uh8TaPg32okSAnegv1ExJNCcUMwxbQVI" alt="Profile Picture" class="profile">
+    </a>
+    </div>
+    <div class="nav-text">
+      
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    </div>
+    <!--<div id="map" style="width: 100%; height: 500px;"></div> -->
+
+  </header>
+  <!--
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<script>
+  function initMap() {
+    var fortPortal = { lat: 0.671, lng: 30.275 }; // Fort Portal coordinates
+
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12, // Adjust zoom level
+      center: fortPortal,
+    });
+
+    var marker = new google.maps.Marker({
+      position: fortPortal,
+      map: map,
+      title: "Fort Portal, Uganda",
+    });
+  }
+</script>
+-->
+ <!-- Google tag (gtag.js) 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ED4ZP6R5E1"></script> -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ED4ZP6R5E1');
+</script>
+<div class="banner">
+  <div class="background">
+      <div class="slide">
+          <img src="map2.jpg" class="fade-img">
+          <div class="text">RUNNING DIGITAL MARKETING CAMPAIGNS</div>
+      </div>
+      <div class="slide">
+          <img src="tr.webp" class="fade-img">
+          <div class="text">WORKING ON INTEGRATED SMART TRAFFIC SYSTEM CONTAINING SENSORS</div>
+      </div>
+      <div class="slide">
+          <img src="aqug.jpg" class="fade-img">
+          <div class="text">RUNNING DIGITAL MARKETING OF AQUALAMA-UV water treatment for ASEI-Ug</div>
+      </div>
+  </div>
+</div>
+
+
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Software Engineer and Entrepreneur passionate about creating innovative solutions. Focused on scalable, user-friendly applications, I leverage IoT to enhance efficiency, connectivity, and quality of life globally. Currently, I am part of exciting ventures, including the Spark food delivery service, where I contribute as a full-stack developer to ensure seamless, user-friendly platforms for customers and vendors. My expertise spans both front-end and back-end development, and I thrive in creating innovative solutions that enhance user experiences.
+
+        <br>As an entrepreneur, I am also involved in the Celestial Horizons hospitality business, where I collaborate with a team to offer short-term accommodation and breakfast services for travelers visiting Uganda. Our aim is to provide an exceptional stay experience while supporting local businesses.
+        
+        <br>In addition, I work as a Social Media Marketing Specialist for Aqualama, a company focused on providing safe and clean drinking water through UV-LED water treatment technology. Through strategic marketing campaigns, I help raise awareness of the benefits of this technology to ensure better public health and well-being.
+        
+        <br>With a passion for innovation and a commitment to improving services in different sectors, I am always eager to collaborate on impactful projects that make a difference.</p>
+      <div class="more-content" >
+        <h3>Background</h3>
+        <p>I come from a vibrant community of forward-thinking software engineers, innovators, and entrepreneurs, all of whom possess exceptional intelligence, creativity, and a passion for harnessing technology to drive positive change.
+
+          As a seasoned professional within this network, I've had the privilege of collaborating with like-minded individuals who share my commitment to innovation, excellence, and continuous learning.</p>
+        <h3>Education</h3>
+        <img src="https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Education Image">
+        <p>I am a self-taught Software Engineer, having studied through freeCodeCamp, where I developed a strong foundation in coding and web development. I use a range of tools and technologies, including CSS, HTML, JavaScript, Python, React, Django, and data analytics tools, to create dynamic, scalable, and efficient solutions.
+
+          <br>My learning journey has been diverse, with resources coming from various platforms and personal projects, which have allowed me to develop both technical expertise and practical problem-solving skills. I am committed to continuous learning, always seeking new ways to expand my skill set and stay up-to-date with the rapidly evolving tech landscape. This drive for growth has shaped my ability to build innovative, user-friendly solutions in every project I undertake.</p>
+      </div>
+      <button class="toggle-btn" onclick="toggleContent('about')">View More</button>
+    </div>
+  </section>
+
+  <section class="project-container" id="projects">
+    <h1>PROJECTS</h1>
+    <!-- Project Cards Section -->
+    <div class="project-cards">
+        <!-- Project Card 1 -->
+        <div class="project-card" id="project-card-1">
+            <img src="aqug.jpg" alt="Project 1 Image">
+            <div class="project-info">
+                <h3 class="heading"> Aqualama – UV-C LED Water Treatment</h3>
+                <p>Marketing consultant</p>
+                <p class="project-description">Promoting Aqualama's UV water treatment program</p>
+            </div>
+            <a href="https://aqualamaug.com/" class="social">Explore More</a>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="project-card" id="project-card-2">
+            <img src="https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Project 2 Image">
+            <div class="project-info">
+                <h3 class="heading">Celestial Horizons-Bed and Breakfast</h3>
+                <p>Co-founder and Partnership manager</p>
+                <p class="project-description">Website listing hotels, bookings, and experiences.</p>
+            </div>
+            <a href="https://www.airbnb.com" class="social">Explore More</a>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="project-card" id="project-card-3">
+            <img src="traffic system.jpg" alt="Project 3 Image">
+            <div class="project-info">
+                <h3 class="heading">Smart traffic system</h3>
+                <p>Role: Designer</p>
+                <p class="project-description">Working with University students on Smart traffic lights with ultrasonic sensors and emergency priority.
+                  Optimizes traffic flow and pedestrian safety effectively.</p>
+            </div>
+            <a href="traffic.html" class="social">Explore More</a>
+        </div>
+        <!-- Project Card 4 -->
+        <div class="project-card" id="project-card-4">
+            <img src="kyebambe.jpg" alt="Project 4 Image">
+            <div class="project-info">
+                <h3 class="heading">STEM</h3>
+                <p>Mentor</p>
+                <p class="project-description">Mentoring  students coding simple websites using HTML and CSS with Crevans.</p>
+            </div>
+            <a href="https://aseiug.org/" class="social">Explore More</a>
+        </div>
+        <!-- Project Card 5 -->
+        <div class="project-card" id="project-card-5">
+            <img src="index.jpg" alt="Project 5 Image">
+            <div class="project-info">
+                <h3  class="heading">indEx</h3>
+                <p>Marketing Specialist</p>
+                <p class="project-description">Working as marketing specialist of indEx</p>
+            </div>
+            <a href="https://www.browse-index.com/" class="social">Explore More</a>
+        </div>
+        <!-- Project Card 6 -->
+        <div class="project-card" id="project-card-6">
+            <img src="https://ssemata.github.io/images1/founder.jpg" alt="Project 6 Image">
+            <div class="project-info">
+                <h3 class="heading">Spark</h3>
+                <p>Co-founder and co-developer</p>
+                <p class="project-description">Working on the back-end of spark.</p>
+            </div>
+            <a href="https://ssemata.github.io/new-spark/" class="social">Explore More</a>
+        </div>
+        <!--Project seven-->
+        <div class="project-card" id="project-card-6">
+          <img src="security.jpg" alt="Project 5 Image">
+          <div class="project-info">
+              <h3 class="heading">Security alarming system </h3>
+              <p>Developer</p>
+              <p class="project-description">Working as developer on Security system that uses sensors to monitor</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="exp">
+    <h2>Experience</h2>
+    <div class="content">
+      <div class="card">
+        <h3>Freelance</h3>
+        <p>Role: Designed and delivered breathtaking visual experiences, including vibrant posters, dynamic flyers, and sophisticated cards, that exceeded the expectations of numerous valued clients and left a lasting impression.(Jun 2024 - Jan 2025)</p>
+      </div>
+      <div class="card">
+        <h3>T&S Fashion</h3>
+        <p>Role: Served as Vice President of Marketing at T&S Fashion, where I successfully grew the brand's online presence and attracted a sizable following. (May 2024 - Dec 2024)</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="more-content hidden-section">
+        <div class="card">
+          <h3>Location Data Organizer</h3>
+          <p>Assisted Index in mapping Fort Portal City, organizing and allocating points of interest, and creating a detailed geographic information system.p>
+        </div>
+        <div class="card">
+          <h3>Tutor</h3>
+          <p>Served as a tutor, providing individualized instruction to university students from the Mountains of the Moon region on website design and development, helping them develop essential skills in web development.</p>
+        </div>
+      </div>
+      <button class="toggle-btn" onclick="toggleContent('experience')">View More</button>
+    </div>
+    <a class="download-btn" href="My CV.pdf" download>Download My CV</a>
+  </section>
+<div class="cont">
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>If you'd like to connect, feel free to reach out through any of the platforms below:</p>
+    
+    <div class="contact-links">
+        <a href="mailto:ssematasabira24@gmail.com" class="email">
+           <img src="data:image/png;base64,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" alt="Email">
+        </a>
+        <a href="https://www.linkedin.com/in/sabira-ssemata-5b6bba315/" target="_blank">
+            <img src="data:image/png;base64,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" alt="LinkedIn">
+        </a>
+        <a href="https://wa.me/+256786023858" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS85IPlBS1PSfRCDrZYMXLLyqTO7icKid_z-4HPy33eQiu1u84In17KFD4&s" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/kamonde985/" target="_blank">
+            <img src="data:image/jpeg;base64,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" alt="Instagram">
+        </a>
+    </div>
+</section>
+</div>
+</div>
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/sabira-ssemata-5b6bba315/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/kamonde985/"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 SSEMATA SABIRA. All rights reserved.</p>
+  </footer>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js">
+    document.addEventListener("DOMContentLoaded", () => {
+      const socialLinks = document.querySelectorAll(".contact-links a");
+  
+      socialLinks.forEach(link => {
+          link.addEventListener("click", (event) => {
+              alert(`You are being redirected to: ${event.target.alt}`);
+          });
+      });
+  });
+
+
+  // Show project cards when "Read More" is clicked on the welcoming card
+document.getElementById('show-projects').addEventListener('click', function() {
+  document.getElementById('welcoming-card').classList.add('hidden'); // Hide welcoming card via CSS class
+  document.getElementById('project-cards').classList.remove('hidden'); // Show project cards via CSS class
+});
+
+// Handle Read More and View Less buttons on individual project cards
+document.querySelectorAll('.read-more').forEach(function(button) {
+  button.addEventListener('click', function() {
+      const card = this.closest('.project-card');
+      card.classList.add('expanded'); // Expand current card
+      
+      // Toggle buttons inside the card
+      card.querySelector('.read-more').classList.add('hidden');
+      card.querySelector('.view-less').classList.remove('hidden');
+
+      // Hide all other cards (using consistent selector for individual cards)
+      const allCards = document.querySelectorAll('.project-card');
+      allCards.forEach(c => {
+          if (c !== card) {
+              c.classList.add('hidden');
+          }
+      });
+  });
+});
+
+document.querySelectorAll('.view-less').forEach(function(button) {
+  button.addEventListener('click', function() {
+      const card = this.closest('.project-card');
+      card.classList.remove('expanded'); // Collapse the card
+      
+      // Toggle buttons inside the card
+      card.querySelector('.read-more').classList.remove('hidden');
+      card.querySelector('.view-less').classList.add('hidden');
+
+      // Show all project cards again
+      const allCards = document.querySelectorAll('.project-card');
+      allCards.forEach(c => c.classList.remove('hidden'));
+  });
+});
+
+
+
+window.onload = function() {
+  // Assuming you want to show the project cards after the page loads
+  document.querySelector('.project-cards').style.display = 'grid';
+};
+
+
+
+
+
+
+  </script>
+
+</body>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "SSEMATA SABIRA",
+    "url": "https://ssemata.github.io/myportfolio/",
+    "image": "https://avatars.githubusercontent.com/u/176613296?s=400&u=2bd7b6406b853a632eda404aaf91dbd955a9a000&v=4",
+    "jobTitle": "FULL STACK ENGINEER AND ENTREPRENEUR",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SPARK"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61556436344384",
+      "https://x.com/SSEMATA916895",
+      "https://www.linkedin.com/in/sabira-ssemata-5b6bba315/"
+    ]
+  }
+  
+
+  </script>
+  <script>
+    window.addEventListener("scroll", function() {
+      let scrollTop = document.documentElement.scrollTop;
+      let scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      let progress = (scrollTop / scrollHeight) * 100;
+      
+      document.getElementById("progress-bar").style.width = progress + "%";
+    });
+
+    
+  </script>
+  <script>
+    window.addEventListener("scroll", function() {
+      let scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      let scrollPosition = window.scrollY;
+    
+      if (scrollPosition >= scrollHeight - 100) { 
+        document.getElementById("badge-container").style.display = "block";
+      }
+    });
+
+    
+    
+    // Detect scrolling to bottom
+    window.addEventListener("scroll", function() {
+      let scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      let scrollPosition = window.scrollY;
+    
+      if (scrollPosition >= scrollHeight - 50) {
+        for (let i = 0; i < 40; i++) { // Create multiple flowers
+          setTimeout(createFlower, i * 200);
+        }
+      }
+    });
+    
+
+    //hero banner
+    const slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function fadeContent() {
+    slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+        slide.querySelector('.text').style.opacity = i === index ? '1' : '0';
+    });
+
+    index = (index + 1) % slides.length;
+}
+
+setInterval(fadeContent, 4000); // Change image & text every 4 seconds
+
+
+const canvas = document.getElementById("fireCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+    constructor(x, y, color, type) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 5 + 2;
+        this.speedX = Math.cos(Math.random() * Math.PI * 2) * (Math.random() * 8 + 2);
+        this.speedY = Math.sin(Math.random() * Math.PI * 2) * (Math.random() * 8 + 2);
+        this.color = color;
+        this.alpha = 1;
+        this.type = type; // "fire" or "smoke"
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.size += this.type === "fire" ? 0.1 : 0.2; // Fire grows, smoke expands faster
+        this.alpha -= this.type === "fire" ? 0.02 : 0.01; // Smoke fades slower
+    }
+
+    draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+    }
+}
+
+function createFirework(x, y) {
+    const colors = ["#ff5733", "#ffbd33", "#ff3333", "#ff8800", "#ffff33"];
+    for (let i = 0; i < 50; i++) {
+        particles.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)], "fire"));
+    }
+
+    // Add smoke effect
+    for (let i = 0; i < 20; i++) {
+        particles.push(new Particle(x, y, "rgba(200,200,200,0.5)", "smoke"));
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((particle, index) => {
+        particle.update();
+        particle.draw();
+        if (particle.alpha <= 0) {
+            particles.splice(index, 1);
+        }
+    });
+
+    requestAnimationFrame(animate);
+}
+
+window.addEventListener("load", () => {
+    setInterval(() => {
+        const x = window.innerWidth / 2;
+        const y = window.innerHeight / 2 - 100; // Firework shoots higher before exploding
+        createFirework(x, y);
+    }, 600);
+
+    animate();
+
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }, 3000);
+});
+
+
+
+
+
+
+  </script>
+</html>
