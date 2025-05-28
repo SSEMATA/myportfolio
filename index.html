@@ -993,7 +993,7 @@
 
  .activity-section {
       width: 100%;
-      background: #f5f8fc;
+      background: linear-gradient(to right, #06224a, #00c6ff);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1043,7 +1043,7 @@
 
     .learn-btn {
       padding: 0.8rem 1.7rem;
-      background-color: #e6cfa8;
+      background-color: #00d4ff;
       color: #001f3f;
       border: none;
       border-radius: 30px;
@@ -1212,6 +1212,7 @@
   transform: scale(1.2);
 }
 
+
         </style>
       </head>
   
@@ -1223,7 +1224,7 @@
       <nav>
         <ul>
           <li class="nav-item">
-            <a href="#">Home</a>
+            <a href="#collaborate">Collaborate</a>
           </li>
   
           <li class="nav-item">
@@ -1374,12 +1375,12 @@
         <div class="slider">
           <div class="slide-track">
             <img src="coding.jpg" alt="Traffic Light 1">
-            <img src="dirty.jpg" alt="Traffic Light 2">
-            <img src="sabs.jpg" alt="Traffic Light 3">
+            <img src="tr.webp" alt="Traffic Light 2">
+            <img src="tr1.png" alt="Traffic Light 3">
             <!-- Repeat images to avoid empty space -->
             <img src="coding.jpg" alt="Traffic Light 1">
-            <img src="dirty.jpg" alt="Traffic Light 2">
-            <img src="sabs.jpg" alt="Traffic Light 3">
+            <img src="tr.webp" alt="Traffic Light 2">
+            <img src="tr1.png" alt="Traffic Light 3">
           </div>
         </div>
         <div class="card-content">
@@ -1428,7 +1429,7 @@
   </section>
   <!-- Technology Stack Section -->
 <section class="tech-stack-section">
-  <h2>Technology Stack</h2>
+  <h2>Tools and programming langues Familiar with</h2>
   <div class="tech-grid">
     <!-- Card: HTML -->
     <div class="tech-card">
@@ -1650,8 +1651,7 @@
 
   </div>
 </section>
-<!-- Activities Section -->
-  <section class="activity-section">
+  <section class="activity-section" id="collaborate">
     <div class="activity-container">
       <div class="activity-image">
         <img src="sabs.jpg" alt="Activity Image" />
@@ -1688,7 +1688,7 @@
       </div>
     </div>
   </section>
-
+</div>
   <!-- WhatsApp Popup -->
   <div class="whatsapp-popup" id="whatsappPopup">
     <div class="whatsapp-header">
@@ -1729,9 +1729,19 @@
 
       <div class="full-description">
         <p>
-          We used ultrasonic sensors to detect cars and optimize light control. The system was coded with Arduino
-          and designed with pedestrians in mind, integrating safe crossings and emergency vehicle priority.
-          Our goal was to make traffic more efficient and safer using affordable tools.
+          To address the growing issue of traffic congestion in urban areas, we developed a Smart 
+          Traffic Light System using an Arduino board and ultrasonic sensors. This system replaces 
+          traditional timer-based lights with a dynamic, sensor-driven approach that adapts in real-time 
+          to the presence of vehicles. Four ultrasonic sensors are installed at a four-way junction—each 
+          detecting vehicle proximity and sending signals to the Arduino, which then prioritizes traffic 
+          flow by turning green lights on only where needed while managing red and yellow lights accordingly.
+           This improves efficiency, reduces waiting time, and minimizes fuel waste. We built the prototype 
+           using a wooden base and cardboard stands, equipped with LEDs for each signal color. 
+           The system also allows for expansion to include pedestrian safety signals, emergency 
+           vehicle detection, and buzzers for alerting signal changes. Prior to the physical setup, 
+           we created a full simulation using Tinkercad to ensure accurate logic and functionality. 
+           This project demonstrates how affordable microcontrollers 
+          and sensors can be combined to create intelligent, scalable traffic solutions for smarter cities.
         </p>
       </div>
 
@@ -1749,9 +1759,18 @@
 
       <div class="full-description">
         <p>
-          Through hands-on sessions, I introduced primary students to how the web works, how to create
-          elements using HTML, and how to style them with CSS. They built portfolio pages and practiced teamwork,
-          sparking interest in technology and creativity at an early age.
+          We believe in shaping a future where young minds are not just passive users of technology,
+           but bold creators and innovative thinkers. Through the power of STEM—Science, Technology,
+            Engineering, and Mathematics—we unlock endless possibilities for the next generation. 
+            Our mission is to ignite curiosity, spark passion, and build confidence by offering hands-on 
+            learning experiences that are both fun and meaningful. Whether we’re guiding students through 
+            building smart systems with Arduino, coding their first websites, or exploring the science behind 
+            clean water and climate tech, we bring learning to life. By blending creativity with critical thinking, 
+            we help learners see challenges as opportunities and encourage them to dream big. We’re not just teaching 
+            STEM—we’re opening doors to brighter careers, stronger communities, and a smarter world. Join us in 
+            cultivating the 
+           innovators, problem-solvers, and tech leaders of tomorrow—because the future deserves builders who 
+          believe in their power to change the world.
         </p>
       </div>
 
@@ -1777,10 +1796,10 @@
     </div>
 
     <div class="footer-links">
-      <a href="#home">Home</a>
+      <a href="index.html">Home</a>
       <a href="#projects">Projects</a>
       <a href="#about">About Me</a>
-      <a href="#contact">Contact</a>
+      <a href="#collaborate">Collaborate</a>
     </div>
 
     <div class="footer-social">
