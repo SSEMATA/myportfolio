@@ -990,7 +990,193 @@
 }
 
 
-    
+ .activity-section {
+      width: 100%;
+      background: #f5f8fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .activity-container {
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .activity-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 60px 40px 90px 60px;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .activity-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .activity-text h2 {
+      font-size: 2.5rem;
+      color: #001f3f;
+      margin-bottom: 1rem;
+    }
+
+    .activity-text hr {
+      width: 120px;
+      border: 2px dotted #e6cfa8;
+      margin-bottom: 1.5rem;
+    }
+
+    .activity-text p {
+      color: #001f3f;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .learn-btn {
+      padding: 0.8rem 1.7rem;
+      background-color: #e6cfa8;
+      color: #001f3f;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .learn-btn:hover {
+      background-color: #d9c198;
+    }
+
+    .extra-activities {
+      display: none;
+      margin-top: 1rem;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .extra-activities p {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .activity-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .activity-text {
+        max-width: 100%;
+      }
+    }
+
+    /* WhatsApp Chat Widget */
+    .whatsapp-popup {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      max-width: 90%;
+      z-index: 9999;
+      display: none;
+      animation: fadeInUp 0.4s ease;
+      flex-direction: column;
+    }
+
+    .whatsapp-header {
+      background: #25D366;
+      color: white;
+      padding: 1rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .whatsapp-header button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .whatsapp-body {
+      padding: 1rem;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .whatsapp-body textarea {
+      width: 100%;
+      height: 80px;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: none;
+      font-family: inherit;
+    }
+
+    .whatsapp-send-btn {
+      margin-top: 10px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .whatsapp-icon {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .whatsapp-icon img {
+      width: 32px;
+      height: 32px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }   
   </style>
 </head>
 <body>
@@ -1427,6 +1613,44 @@
 
   </div>
 </section>
+<!-- Activities Section -->
+  <section class="activity-section">
+    <div class="activity-container">
+      <div class="activity-image">
+        <img src="your-image.jpg" alt="Activity Image" />
+      </div>
+      <div class="activity-text">
+        <h2>Activities</h2>
+        <hr />
+        <p>Our team is composed of friendly and attentive hosts.</p>
+        <p>We offer delightful breakfast options, local attractions, and personalized recommendations for your visit.</p>
+        <div class="extra-activities" id="extraActivities">
+          <p>✨ Guided nature walks through scenic trails.</p>
+          <p>🚲 Biking adventures in nearby countryside paths.</p>
+          <p>🎨 Cultural workshops and local art sessions.</p>
+          <p>🍽️ Traditional Ugandan cooking classes.</p>
+        </div>
+        <button class="learn-btn" id="toggleBtn">Learn more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Popup -->
+  <div class="whatsapp-popup" id="whatsappPopup">
+    <div class="whatsapp-header">
+      Chat with us
+      <button onclick="toggleChat()">×</button>
+    </div>
+    <div class="whatsapp-body">
+      <textarea id="whatsappMessage" placeholder="Type your message here..."></textarea>
+      <button class="whatsapp-send-btn" onclick="sendWhatsAppMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Icon -->
+  <div class="whatsapp-icon" id="whatsappIcon" onclick="toggleChat()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </div>
 
 
 <!-- Download CV Section -->
@@ -1650,6 +1874,56 @@ setTimeout(hideOverlay, 3000);
     transform: translateY(0);
   }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Activity toggle
+    const toggleBtn = document.getElementById('toggleBtn');
+    const extraActivities = document.getElementById('extraActivities');
+
+    if (toggleBtn && extraActivities) {
+      let isVisible = false;
+      toggleBtn.addEventListener('click', () => {
+        isVisible = !isVisible;
+        extraActivities.style.display = isVisible ? 'block' : 'none';
+        toggleBtn.textContent = isVisible ? 'Show less' : 'Learn more';
+      });
+    }
+
+    // WhatsApp Chat Popup
+    const popup = document.getElementById('whatsappPopup');
+    const icon = document.getElementById('whatsappIcon');
+
+    if (popup && icon) {
+      // Show popup after page load
+      popup.style.display = 'flex';
+
+      // Expose toggleChat globally if needed in inline HTML
+      window.toggleChat = function () {
+        if (popup.style.display === 'none') {
+          popup.style.display = 'flex';
+          icon.style.display = 'none';
+        } else {
+          popup.style.display = 'none';
+          icon.style.display = 'flex';
+        }
+      };
+    }
+
+    // Expose sendWhatsAppMessage globally if needed in inline HTML
+    window.sendWhatsAppMessage = function () {
+      const messageInput = document.getElementById('whatsappMessage');
+      if (messageInput) {
+        const message = messageInput.value.trim();
+        if (message !== "") {
+          const phoneNumber = "256786023858";
+          const encodedMessage = encodeURIComponent("Hello, I'm interested in your services: " + message);
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+          window.open(whatsappURL, '_blank');
+        }
+      }
+    };
+  });
+</script>
 
 </body>
 </html>
