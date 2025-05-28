@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="color-scheme" content="light">
+        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
           <!-- Open Graph Meta Tags for Social Media Sharing -->
           <meta property="og:title" content="SSEMATA SABIRA" />
@@ -68,8 +69,8 @@
       
           
         </script>
-      </head>
-  <style>
+        <style>
+          
     * {
       box-sizing: border-box;
       margin: 0;
@@ -1163,8 +1164,8 @@
     }
 
     .whatsapp-icon img {
-      width: 32px;
-      height: 32px;
+      width: 25px;
+      height: 25px;
     }
 
     @keyframes fadeInUp {
@@ -1177,7 +1178,43 @@
         transform: translateY(0);
       }
     }   
-  </style>
+
+    /*
+    Dark Mode Styles */
+      .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-in-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  .contact-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-icons a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.contact-icons a:hover img {
+  transform: scale(1.2);
+}
+
+        </style>
+      </head>
+  
 </head>
 <body>
   <header>
@@ -1617,20 +1654,37 @@
   <section class="activity-section">
     <div class="activity-container">
       <div class="activity-image">
-        <img src="your-image.jpg" alt="Activity Image" />
+        <img src="sabs.jpg" alt="Activity Image" />
       </div>
       <div class="activity-text">
-        <h2>Activities</h2>
+        <h2>Collaborate with Me</h2>
         <hr />
-        <p>Our team is composed of friendly and attentive hosts.</p>
-        <p>We offer delightful breakfast options, local attractions, and personalized recommendations for your visit.</p>
+        <p>Feel free to reach out – I'm always happy to connect!</p>
+        <p>Whether you're a client, collaborator, or fellow creative, I'm just a message away.</p>
         <div class="extra-activities" id="extraActivities">
-          <p>✨ Guided nature walks through scenic trails.</p>
-          <p>🚲 Biking adventures in nearby countryside paths.</p>
-          <p>🎨 Cultural workshops and local art sessions.</p>
-          <p>🍽️ Traditional Ugandan cooking classes.</p>
+          <p>💼 Collaborate on innovative tech projects or digital solutions.</p>
+          <p>🧠 Share ideas, brainstorm, or request consultations.</p>
+          <p>🎓 Book mentorship or workshops in coding, IoT, or digital skills.</p>
+          <p>🌍 Connect for partnerships in entrepreneurship or tech education.</p>
         </div>
         <button class="learn-btn" id="toggleBtn">Learn more</button>
+        <div class="contact-icons">
+        <a href="https://wa.me/256786023858" target="_blank" title="WhatsApp">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        </a>
+        <a href="mailto:ssematasabira24@gmail.com" title="Email">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJkAAACUCAMAAAC3HHtWAAAAclBMVEX///+byf8egc6fzP8Adcrd6PURfcwAesxio+QXf80nhNBKjtPh6/eNs+Aphc8AeMuPwPel0P9kmtYAbMd4su5Cktny9/xWl9a80ew3jdZurOqDufNQmd5bnNd4q92wzerH2u+Vu+PR4vNupdulxuiBsd/n/Ot1AAAJz0lEQVR4nO2ci5KivBKAh4CJQQbGXUXxBnh5/1c8SbqDNyAdhfWvOtNVu+XuCPlIJ31LM19f/w+yvqw/jdAq+Sni0Sn/NMazTFaCMSZWk0+DPEopONPCRflplHu5CKmwzB9x+TTMjShNGqhY//1f0mjFtSalnAZTrtk4rz6NBPJtcKRchEG4kOYz//40lJJkH5mVv/wJgyAIf5ZmJ0T75NNgx9Roku8CDabQgh1oND1+FqzODBhbAJeW+cJsBJ7VH+TKDxnMz/YKpqZtC/OYHT7mEI6pAE2Gt2AKLdyZjSA+pdFSmsXON/dchm0DP5JDO4Q8IcjJaJKlm5822aTMaPREuRVZ68lKcIIwENku+FPKjcSKamL2WcdobUO7hHKrbE8ki6mjDiUyJpKlUocM/0r0YCmdTKbf/0rMaB5kM+J335fZL5m3/JL5yy+Zv/yS+csvmb+MT5Ynk+OEHgQ2Mi5ZUl6WPNLCl5fSL9Uck+z4p8gEh6BOcpEVf3wyk/HIjquI34eakkcrOttoZBcpEIerMJAjpGDkysZIZMksAxK+3F/qur6cZtyQymxGXG7jkCUFZOPRpbIcSXWJMHOnoY1CNok1GJf1va3Ia2b+PyZV+MYgy82MZS2r/bjSSuYzinUbg2xvqtmHG9Trx4P5GSWPHIHsrAfPbL04KevD6VKvLd23njVx/gRZotNSOyvJIeZC2w2eXnDh6xmVhF3gQ8ZIZAc1KXwFU3SOhDW2KoWGAlC+UqswO/TdoiFjJK5kr+7oJkt0ZQOL2CeBVGhmQcOVnjTpnLSZvg+lrFtBfdNJVqtxxcl8PEANOROSZ1A/rhtg4ayJzqB2Wrm+ByV0N1muZzYzBqs0lcdsWR4nx3JprKww40y0vvcuyzGDAXn/0QuW0AlkE7WwuJmyXLNIZquLpba+kpvPJ66WncvcznCF9hbqsfBKISvVI3BjE2pjVK8nm2ut0MiAnrn95CJzlHVrowmZUsj0dDB9p1zf+W740mxa/emovsNdu9OQpWbkjkK9LaEXPzGBTJkEmeY4+oM9UltUFlo1uRoQGB1k8Q+GBm0nt6BJJnfhnEKmxzTfWWdPG1BvW7AnM+62ooZsHu7gnO9Zo2dTQpdiEwQkMm5n46zIsvvz83XzX3pmJYksCDfGWHN579DyAxxQFvowhEQm7FrSE/RgjKpbMiZoZEG4LeDk9laj+clEpnisNeyckcnMYZrGuF1sE7BiUzgM8Vtn2geJ+/13ES+RKbYpWLarCQQyuYSDLRLZ3u7NiY5MxO2WyvXKeIUs3C7byZiMF2Rt6nmRFTLeb87axG0vaHOBBxHPZOrZ9Uojka0jy6M/3aIZMJaVlozTyOwqayEzvPrQmUSmgyCMzvRpphSYpeQ1RGpme0wotX60Z3jMLZ/JZIqH84t5TIkcT9onVuZqOMyMDueqPEQYqjGxWp91CuVs3wCyLbYJaDf1QManCwyANiSyc2PRvtZ/gSWLMvAjkUnqTNophauOoGPaeIOh0GLaRjYH50WLNb5yvVwh2vhaM7tEDGFxXNmZY+7T9CbW0C57PuUtZOHNIiTkAXV0zUAmtuoiJddxVjKDsEVGpDwARBv6sJ0ssJ0gJDKTgfAC/1XtCymUMosTaO+7UIkUmxFOq5HMdKIEnWS2b0B5UHd6vdYqu0bTSVWW66q5LF+XZUXI0fMCNAn9C91kjVnhhbsCdoESwVvdLEdY23wJnSg9ZKZvANqO3Pk1lA9SQiLeJdC/IPnGNi30kWmNQhTn7ATJzR6UYl+9CAbBF4+bFpl+MjWvYI/F0qXRfA/hU7Q6V/5lbTQuVpMEMvyCfhhXs2d+ieCbah+u/lihde2tY7h0egVzkwXzLWYzTo2ulxmaQGXLjCiTdnJzqWcyV6WLeRB4kAUhOgThzLHz7yh7LG4Xzv1q10Hxcz+sm0x/yVhdDm67V+p93BwI0B6nirAB8WlQApk1H4y7G8nyY3lY8egvirNAW0Nk8dzsRCOzrYEyI/ft0CTZ25z7eUgaWeMQBMEh0OVYCOvAn0ckkinZwGKjFFyJchawxDZtw3mQzbdQcRiqVzw/RKDJ7bxtOA8y4xAk0cW7BTQpb83+y2RXFz+ARkGTrQ2Ir5DduPg3wQ6QJsSL7qH8yK4ufvaORlsc+Ntk6lbo4tnr73O0OfD3yXRnMbj46MX2XdyTDw58CLLGxWcv9Yon7Q58EDLj4s3ds06Ndk4nOHD25MAHItM5HyyV9jPy/LK/tLN9Y0dy9558k+zq4ts0ekwFby3pWwe+dGjyHbKri0+rx/HPcELNnsxxlXY78OHImiyePwRtWILWidTD5q3hJRXWafaHItMlaP5kPibQHGHg7tohHA58ULIbF9/cwNaCllgIaDbvBJ6i1+wPR6ZdPGg0gzWV13+tEUVz/BcLkBiKdTvwocmURqHWa067cnSH2og2GZepk+LxR+o2FoOR3br4NVYmpuaVD10Agx2yPs7cDnx4Mu3iYdyUYezcVCZQ1XFKcOAjkF2z+Cd3iBqFenRK3JNDkimCnTVhuzvrrn5gy7QUsz88mfXwMt48zst8AztETj1vOQhZU5yMt88X2qIqzSUNS4aGQ8r2sRU3LLQ27lHJwg0spO6IC3VNiMmGJNMzwmDr9SQbuHn5zmMbvOud0NI7xlR7lJNC7MHIwuvOcwT1mHGp3Uu+9ztREFp/kju05lhQPcE7kWOAx2Y0FTWKJ2r0dbLmFeVpSJwELKrevRY7AhlW46WgR1y6YIO+fbw8wKqGqMmby579/qBkNgPIfAwUoO3a3icejqwxAX6BjZb5BsMll4t/gaxx4O7nbr28cfH98+1P5nDgBDSai/evn8HW93TPj/eA3oHee/hWQ/E3BviGNI+3wXnvC9o8K8g/9yfKr6NhxtUabL5AZh24ZxbUjob7u7PK4UGmHbh3PtvDZsvkHY9JJ7MO3CfG6kdrXHx7lE4lCxfMz4ET0GzKJds0Sj6rg2XBeOvp1cts2EjTOaL75PU1B05A6w7aaKfV9pDf14ET0IIdNmI/mg8SWbPB/R24W7pcvJusyXtec+Bu6XDx7k6SV3JFT7RWl+ciwxpY0/s7Ehv09d65eEfHkg1YxtJkg9FoprG6/V1edgV4F7/80bAEd3XxfWTkwHgYebAAPd2ETQbuWcZ8VRoXD3utuwNzaAdOQLvzNF1kfR5tRDZ08TqL7yDrjQLGRIOIRmcZ7WSexZEh0YImi28hk8uiN9ocGQ0j52L53LeNEzqOA3dLU6hnrW8uMFb8zMPPyBzrMl1kcRp/StKY9ZGRfsHVSML6yf4LckOWF0K6L/hHIsXta+zHZfbPfneXSzJnT/avdMn/ACAM4js0PssvAAAAAElFTkSuQmCC" alt="Email" />
+        </a>
+        <a href="https://www.instagram.com/ssemata567/" target="_blank" title="Instagram">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook" />
+        </a>
+        <a href="https://x.com/" target="_blank" title="X (Twitter)">
+          <img src="data:image/png;base64,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" alt="X" />
+        </a>
+      </div>
       </div>
     </div>
   </section>
@@ -1638,7 +1692,7 @@
   <!-- WhatsApp Popup -->
   <div class="whatsapp-popup" id="whatsappPopup">
     <div class="whatsapp-header">
-      Chat with us
+      Chat with Me
       <button onclick="toggleChat()">×</button>
     </div>
     <div class="whatsapp-body">
@@ -1770,160 +1824,6 @@
   ">Continue to site</button>
   </div>
   <!--end-->
-  <script>
-    const slides = document.querySelectorAll('.slide');
-let index = 0;
-
-function fadeContent() {
-    slides.forEach((slide, i) => {
-        slide.style.opacity = i === index ? '1' : '0';
-        slide.querySelector('.text').style.opacity = i === index ? '1' : '0';
-    });
-
-    index = (index + 1) % slides.length;
-}
-
-setInterval(fadeContent, 4000); 
-
-//theme//
-const toggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
-const icon = toggleBtn.querySelector("i");
-
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("dark-theme");
-
-  if (body.classList.contains("dark-theme")) {
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-  } else {
-    icon.classList.remove("fa-sun");
-    icon.classList.add("fa-moon");
-  }
-});
-
-// Under Construction Overlay
-const overlay = document.getElementById('under-construction-overlay');
-const continueBtn = document.getElementById('continue-button');
-
-function hideOverlay() {
-  overlay.style.display = 'none';
-}
-
-continueBtn.addEventListener('click', hideOverlay);
-
-// Auto hide after 5 seconds if user doesn't click
-setTimeout(hideOverlay, 3000);
-
-// projects
-
-
-
-  </script>
-  <script>
-  const reveals = document.querySelectorAll(".reveal");
-
-  window.addEventListener("scroll", () => {
-    reveals.forEach((el) => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-
-      if (elementTop < windowHeight - 100) {
-        el.classList.add("active");
-      }
-    });
-  });
-</script>
-<script>
-  document.querySelectorAll('.read-more').forEach(button => {
-    button.addEventListener('click', () => {
-      const content = button.closest('.article-content');
-      content.classList.toggle('expanded');
-
-      button.textContent = content.classList.contains('expanded') 
-        ? "Show Less" 
-        : "Read More";
-    });
-  });
-
-  let currentIndex = 0;
-  const articles = document.querySelectorAll('.article-card');
-
-  function slideArticles(direction) {
-    articles[currentIndex].style.display = "none";
-    currentIndex = (currentIndex + direction + articles.length) % articles.length;
-    articles[currentIndex].style.display = "block";
-  }
-
-  // Initial display setup
-  articles.forEach((card, index) => {
-    card.style.display = index === 0 ? "block" : "none";
-  });
-</script>
-
-
-<style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-in-out;
-  }
-
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Activity toggle
-    const toggleBtn = document.getElementById('toggleBtn');
-    const extraActivities = document.getElementById('extraActivities');
-
-    if (toggleBtn && extraActivities) {
-      let isVisible = false;
-      toggleBtn.addEventListener('click', () => {
-        isVisible = !isVisible;
-        extraActivities.style.display = isVisible ? 'block' : 'none';
-        toggleBtn.textContent = isVisible ? 'Show less' : 'Learn more';
-      });
-    }
-
-    // WhatsApp Chat Popup
-    const popup = document.getElementById('whatsappPopup');
-    const icon = document.getElementById('whatsappIcon');
-
-    if (popup && icon) {
-      // Show popup after page load
-      popup.style.display = 'flex';
-
-      // Expose toggleChat globally if needed in inline HTML
-      window.toggleChat = function () {
-        if (popup.style.display === 'none') {
-          popup.style.display = 'flex';
-          icon.style.display = 'none';
-        } else {
-          popup.style.display = 'none';
-          icon.style.display = 'flex';
-        }
-      };
-    }
-
-    // Expose sendWhatsAppMessage globally if needed in inline HTML
-    window.sendWhatsAppMessage = function () {
-      const messageInput = document.getElementById('whatsappMessage');
-      if (messageInput) {
-        const message = messageInput.value.trim();
-        if (message !== "") {
-          const phoneNumber = "256786023858";
-          const encodedMessage = encodeURIComponent("Hello, I'm interested in your services: " + message);
-          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-          window.open(whatsappURL, '_blank');
-        }
-      }
-    };
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
