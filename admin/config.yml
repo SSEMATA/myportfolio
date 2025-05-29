@@ -1,34 +1,37 @@
 backend:
   name: github
-  repo: SSEMATA/myportfolio  # your GitHub repo in "username/repo" format
-  branch: main               # or your default branch (e.g., master)
+  repo: SSEMATA/myportfolio
+  branch: main
 
-media_folder: "static/images"     # folder where uploaded images will be stored
-public_folder: "/images"          # path used to access images in your site
+media_folder: "static/images"
+public_folder: "/images"
 
-site_url: https://luxury-dango-9a755f.netlify.app/
+site_url: https://luxury-dango-9a755f.netlify.app
 
 collections:
-  - name: "blog"              # collection name
-    label: "Blog Posts"       # UI label
-    folder: "content/blog"    # folder in your repo where files will be stored
-    create: true              # allow users to create new documents in this collection
-    slug: "{{slug}}"          # file name template
-    fields:                   # fields to be edited in CMS
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "pages"
     label: "Pages"
     files:
-      - file: "content/about.md"
-        label: "About Page"
+      - label: "About"
+        name: "about"
+        file: "content/about.md"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "content/contact.md"
-        label: "Contact Page"
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - label: "Contact"
+        name: "contact"
+        file: "content/contact.md"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
