@@ -1,0 +1,26 @@
+---
+title: "Home Content"
+welcome_message: "Welcome to my portfolio – a garden of creativity where ideas bloom into projects, skills, and experiences!"
+hero_title: "Welcome to My Portfolio"
+hero_subtitle: "Software Engineer | IoT Enthusiast | Entrepreneur"
+primary_button: "Connect With Me"
+secondary_button: "Explore My Projects"
+about_background: "Coming from innovative and entrepreneur who wants to change the world in positive way."
+about_education: "Self taught Software Engineer learned especially from FreeCodeCamp."
+project_1_title: "Aqualama by ASEI"
+project_1_description: "Running Digital marketing campaign."
+project_2_title: "STEM Education"
+project_2_description: "Teaching young students how to code and writing simple web pages."
+project_3_title: "Celestial Horizons"
+project_3_description: "Running partnership and a founder."
+experience_1_title: "Freelazer"
+experience_1_description: "Graphical Designer."
+experience_2_title: "H&S Fashion"
+experience_2_description: "Marketing President."
+experience_3_title: "indEx"
+experience_3_description: "Acted as Location Data Analyst."
+experience_4_title: "Spark"
+experience_4_description: "Built the Frontend and Backend of Spark food delivery website."
+---
+
+This file controls homepage content.

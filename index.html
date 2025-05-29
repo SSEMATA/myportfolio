@@ -1939,6 +1939,43 @@
   ">Continue to site</button>
   </div>
   <!--end-->
-  <script src="script.js"></script>
+  <script src="script.js">
+  fetch("/content/home.md")
+  .then((res) => res.text())
+  .then((text) => {
+    const welcomeText = text.match(/welcome_message: "(.*?)"/)[1];
+    document.getElementById("welcomeMessage").textContent = welcomeText;
+  });
+
+
+  fetch('content/home.json')
+  .then(response => response.json())
+  .then(data => {
+    // Update welcome text
+    const welcomeEl = document.getElementById('welcome-text');
+    if (welcomeEl) welcomeEl.textContent = data.welcomeText;
+
+    // Update hero banner texts and links
+    const heroTitle = document.querySelector('.hero-banner h1');
+    if (heroTitle) heroTitle.textContent = data.heroTitle;
+
+    const heroSubtitle = document.querySelector('.hero-banner p');
+    if (heroSubtitle) heroSubtitle.textContent = data.heroSubtitle;
+
+    const primaryBtn = document.querySelector('.hero-buttons .hero-btn.primary');
+    if (primaryBtn) {
+      primaryBtn.textContent = data.primaryBtnText;
+      primaryBtn.href = data.primaryBtnLink;
+    }
+
+    const secondaryBtn = document.querySelector('.hero-buttons .hero-btn.secondary');
+    if (secondaryBtn) {
+      secondaryBtn.textContent = data.secondaryBtnText;
+      secondaryBtn.href = data.secondaryBtnLink;
+    }
+  })
+  .catch(err => console.error('Error loading content:', err));
+
+</script>
 </body>
 </html>

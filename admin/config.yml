@@ -1,37 +1,49 @@
 backend:
-  name: github
-  repo: SSEMATA/myportfolio
+  name: git-gateway
   branch: main
 
-media_folder: "static/images"
-public_folder: "/images"
-
-site_url: https://luxury-dango-9a755f.netlify.app
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  - name: "home"
+    label: "Home Page"
+    folder: "content"
+    create: false
+    slug: "home"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "welcome_message", label: "Welcome Message", widget: "text" }
+      - { name: "hero_title", label: "Hero Title", widget: "string" }
+      - { name: "hero_subtitle", label: "Hero Subtitle", widget: "string" }
+      - { name: "primary_button", label: "Primary Button Text", widget: "string" }
+      - { name: "secondary_button", label: "Secondary Button Text", widget: "string" }
 
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "About"
-        name: "about"
-        file: "content/about.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+      - { name: "about_background", label: "About Background", widget: "text" }
+      - { name: "about_education", label: "About Education", widget: "text" }
 
-      - label: "Contact"
-        name: "contact"
-        file: "content/contact.md"
+      - { name: "project_1_title", label: "Project 1 Title", widget: "string" }
+      - { name: "project_1_description", label: "Project 1 Description", widget: "text" }
+      - { name: "project_2_title", label: "Project 2 Title", widget: "string" }
+      - { name: "project_2_description", label: "Project 2 Description", widget: "text" }
+      - { name: "project_3_title", label: "Project 3 Title", widget: "string" }
+      - { name: "project_3_description", label: "Project 3 Description", widget: "text" }
+
+      - { name: "experience_1_title", label: "Experience 1 Title", widget: "string" }
+      - { name: "experience_1_description", label: "Experience 1 Description", widget: "text" }
+      - { name: "experience_2_title", label: "Experience 2 Title", widget: "string" }
+      - { name: "experience_2_description", label: "Experience 2 Description", widget: "text" }
+      - { name: "experience_3_title", label: "Experience 3 Title", widget: "string" }
+      - { name: "experience_3_description", label: "Experience 3 Description", widget: "text" }
+      - { name: "experience_4_title", label: "Experience 4 Title", widget: "string" }
+      - { name: "experience_4_description", label: "Experience 4 Description", widget: "text" }
+
+      - label: "Social Links"
+        name: "social_links"
+        widget: "object"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - { name: "email", label: "Email", widget: "string" }
+          - { name: "whatsapp", label: "WhatsApp", widget: "string" }
+          - { name: "instagram", label: "Instagram", widget: "string" }
+          - { name: "linkedin", label: "LinkedIn", widget: "string" }
+          - { name: "facebook", label: "Facebook", widget: "string" }
