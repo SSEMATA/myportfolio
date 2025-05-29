@@ -136,3 +136,17 @@ setTimeout(hideOverlay, 3000);
       }
     };
   });
+
+
+  
+  //JavaScript 
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        const mainContent = document.getElementById("main-content");
+
+        preloader.style.display = "none";
+        mainContent.classList.add("visible");
+        document.body.style.overflow = "auto";
+      }, 5000); // Adjust time as needed
+    });

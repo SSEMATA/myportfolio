@@ -1213,12 +1213,92 @@
 }
 
 
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(to bottom right, #fff6f9, #f0fcff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* Flower Decoration */
+    .flower {
+      font-size: 32px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Welcome Text Styling */
+    #welcome-text {
+      font-size: 30px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #f97316, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 20px 0;
+      line-height: 1.6;
+      letter-spacing: 1px;
+    }
+
+    /* Styled Spinner */
+    .spinner-wheel {
+      border: 10px solid #e0e0e0;
+      border-top: 10px solid #ff69b4;
+      border-right: 10px solid #8a2be2;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 1s linear infinite;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Main Content - Initially Hidden */
+    #main-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      padding: 2rem;
+    }
+
+    /* Show Content */
+    #main-content.visible {
+      display: block;
+      opacity: 1;
+    }
         </style>
       </head>
   
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="flower">🌸🌼🌷</div>
+    <h2 id="welcome-text">
+      Welcome to my portfolio – a garden of creativity<br/>
+      where ideas bloom into projects, skills, and experiences!
+    </h2>
+    <div class="spinner-wheel"></div>
+  </div>
   <header>
+    <div id="welcome-message"></div>
     <div class="nav-container">
       <div class="logo">Sabira</div>
       <nav>
@@ -1311,6 +1391,22 @@
     <button id="theme-toggle" aria-label="Toggle light and dark mode">
       
     </button>
+    <div id="g_id_onload"
+     data-client_id="YOUR_GOOGLE_CLIENT_ID"
+     data-context="signin"
+     data-callback="handleCredentialResponse"
+     data-auto_prompt="true">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="outline"
+     data-text="sign_in_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+
   </header>
   <!--Hero Banner-->
   <section class="hero-banner">
@@ -1429,7 +1525,7 @@
   </section>
   <!-- Technology Stack Section -->
 <section class="tech-stack-section">
-  <h2>Tools and programming langues Familiar with</h2>
+  <h2>Tools and programming languages Familiar with</h2>
   <div class="tech-grid">
     <!-- Card: HTML -->
     <div class="tech-card">
