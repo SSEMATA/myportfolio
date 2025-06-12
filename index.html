@@ -77,6 +77,11 @@
       margin: 0;
       padding: 0;
     }
+@media (max-width: 640px) {
+  .small-screen-nav {
+    display: none !important;
+  }
+}
 
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -1302,7 +1307,7 @@
     <div id="welcome-message"></div>
     <div class="nav-container">
       <div class="logo">Sabira</div>
-      <nav>
+      <nav class="small-screen-nav">
         <ul>
           <li class="nav-item">
             <a href="#collaborate">Collaborate</a>
@@ -1883,7 +1888,6 @@
     <button class="nav-btn" onclick="slideArticles(1)">&#10095;</button>
   </div>
 </section>
-
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
@@ -1927,7 +1931,6 @@
   text-align: center;
   padding: 2rem;
   ">
-  <p>⚠️ This page is under construction and not yet complete.</p>
   <button id="continue-button" style="
     margin-top: 2rem;
     font-size: 1.2rem;
@@ -1977,6 +1980,262 @@
   })
   .catch(err => console.error('Error loading content:', err));
 
+</script>
+<!-- Bottom Navigation -->
+<div class="bottom-nav" id="bottomNav">
+  <button onclick="navigateTo('home')">
+    <i data-lucide="home"></i>
+    <span>Home</span>
+  </button>
+  <button onclick="toggleSearch()">
+    <i data-lucide="search"></i>
+    <span>Search</span>
+  </button>
+  <button onclick="navigateTo('projects')">
+    <i data-lucide="folder"></i>
+    <span>Projects</span>
+  </button>
+</div>
+
+<!-- Expandable Search Input -->
+<div class="search-panel" id="searchPanel">
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." oninput="showSuggestions()" />
+    <button id="searchBtn" onclick="performSearch()">Search</button>
+  </div>
+  <ul id="suggestionsList"></ul>
+</div>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- Styling -->
+<style>
+  .bottom-nav {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 10px 0;
+      border-top: 1px solid #ddd;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .bottom-nav.hide {
+      transform: translateY(100%);
+    }
+
+    .bottom-nav button {
+      background: none;
+      border: none;
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .bottom-nav i {
+      width: 24px;
+      height: 24px;
+    }
+
+    .search-panel {
+      display: none;
+      position: fixed;
+      bottom: 60px;
+      left: 10px;
+      right: 10px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+      z-index: 1001;
+      flex-direction: column;
+    }
+
+    .search-panel.show {
+      display: flex;
+    }
+
+    .search-container {
+      display: flex;
+      gap: 8px;
+    }
+
+    #searchInput {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    #searchBtn {
+      padding: 10px 14px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      background: #333;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #suggestionsList {
+      margin-top: 10px;
+      list-style: none;
+      padding: 0;
+    }
+
+    #suggestionsList li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    #suggestionsList li:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  @media (min-width: 641px) {
+    .search-panel {
+      display: none !important;
+    }
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  lucide.createIcons();
+
+  const bottomNav = document.getElementById('bottomNav');
+  const searchPanel = document.getElementById('searchPanel');
+  const searchInput = document.getElementById('searchInput');
+  const suggestionsList = document.getElementById('suggestionsList');
+  let lastScrollY = window.scrollY;
+  let inactivityTimer;
+
+  // Dismiss search panel on outside click
+  document.addEventListener('click', (e) => {
+    const searchPanel = document.getElementById('searchPanel');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchToggle = document.querySelector('[onclick="toggleSearch()"]');
+
+    if (
+      searchPanel.classList.contains('show') &&
+      !searchPanel.contains(e.target) &&
+      !searchToggle.contains(e.target)
+    ) {
+      toggleSearch();
+    }
+  });
+
+  // Hide search panel on scroll
+  window.addEventListener('scroll', () => {
+    if (searchPanel.classList.contains('show')) {
+      toggleSearch();
+    }
+  });
+
+  const keywords = [
+    'HTML Tutorial', 'CSS Guide', 'JavaScript Basics', 'Portfolio Project',
+    'GitHub Pages', 'Responsive Design', 'Dark Mode', 'About Me', 'Contact'
+  ];
+
+  function navigateTo(page) {
+    if (page === 'home') {
+      window.location.href = '/';
+    } else if (page === 'projects') {
+      window.location.href = '/projects.html';
+    }
+  }
+
+  function toggleSearch() {
+    searchPanel.classList.toggle('show');
+    if (searchPanel.classList.contains('show')) {
+      searchInput.focus();
+    } else {
+      suggestionsList.innerHTML = '';
+      searchInput.value = '';
+    }
+  }
+
+  function showSuggestions() {
+    const input = searchInput.value.toLowerCase();
+    suggestionsList.innerHTML = '';
+    if (!input) return;
+
+    const filtered = keywords.filter(k => k.toLowerCase().includes(input));
+    filtered.forEach(suggestion => {
+      const li = document.createElement('li');
+      li.textContent = suggestion;
+      li.onclick = () => {
+        const query = encodeURIComponent(suggestion);
+        window.location.href = `/search.html?q=${query}`;
+      };
+      suggestionsList.appendChild(li);
+    });
+  }
+
+  function performSearch() {
+    const input = searchInput.value.trim().toLowerCase();
+    if (!input) return;
+
+    const match = keywords.find(k => k.toLowerCase() === input);
+    if (match) {
+      const query = encodeURIComponent(match);
+      window.location.href = `/search.html?q=${query}`;
+    } else {
+      alert("word is not found, check the spelling");
+    }
+  }
+
+  function hideNav() {
+    bottomNav.classList.add('hide');
+  }
+
+  function showNav() {
+    bottomNav.classList.remove('hide');
+  }
+
+  function resetInactivityTimer() {
+    clearTimeout(inactivityTimer);
+    inactivityTimer = setTimeout(() => {
+      hideNav();
+    }, 10000);
+  }
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY) {
+      showNav();
+      resetInactivityTimer();
+    } else if (currentScrollY < lastScrollY) {
+      hideNav();
+    }
+    lastScrollY = currentScrollY;
+  });
+
+  ['mousemove', 'keydown', 'touchstart'].forEach(evt => {
+    window.addEventListener(evt, resetInactivityTimer);
+  });
+
+  resetInactivityTimer();
 </script>
 </body>
 </html>
